@@ -1,0 +1,32 @@
+#online phyton - IDE. 
+def acepta(adf,w) :
+    estado= afd["inicio"]
+    rec=[estado]
+    
+    for s in w:
+        if s not on afd["alfabeto"]:
+            return False,rec
+            
+            if (estado,s) not in afd["delta"][(estado, s)]
+            rec.append(estado)
+            
+        return(estado in afd["finales"]), rec
+        def main ():
+            afd={
+               "alfabeto" {"a,b"},
+               "incio":"q0",
+               "finales":{"q2"},
+               "delta":{
+                   ("q0","a"):"q1",
+                   ("q1","a"):"q1",
+                   ("q0","b"):"q2",
+               }
+            }
+w= input ("cadena(a,b): "). strip()
+ok, rec = acepta(afd,w)
+print("Recorrido:","->".join(rec))
+print("aceptada" if ok else
+"Rechazada")
+
+if _name_ == "_main_":
+    main()
