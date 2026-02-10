@@ -1,0 +1,38 @@
+# Online Python - IDE, Editor, Compiler, Interpreter
+def acepta(cadena):
+    estado = "q0"
+
+    for simbolo in cadena:
+        if estado == "q0":
+            if simbolo == "0":
+                estado = "q2"
+            elif simbolo == "1":
+                estado = "q4"
+            else:
+                return False
+
+        elif estado == "q2":
+            if simbolo == "1":
+                estado = "q3"
+            else:
+                return False
+
+        elif estado == "q4":
+            if simbolo == "0":
+                estado = "q3"
+            else:
+                return False
+
+        elif estado == "q3":
+            return False  # no hay transiciones desde q3
+
+    return estado == "q3"
+
+
+# Tabla de pruebas
+cadenas = ["01", "10", "00", "11", "010", ""]
+
+print("Cadena\tResultado")
+for c in cadenas:
+    resultado = "Acepta" if acepta(c) else "Rechaza"
+    print(f"{c if c != '' else 'ε'}\t{resultado}")
